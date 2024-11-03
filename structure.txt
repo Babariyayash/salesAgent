@@ -1,0 +1,10 @@
+sales_ai_agent/
+│
+├── __init__.py
+├── main.py
+├── config.py
+├── llm_processor.py
+├── text_to_speech.py
+├── transcript_collector.py
+├── conversation_manager.py
+└── system_prompt.txt

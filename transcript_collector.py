@@ -6,7 +6,7 @@ class TranscriptCollector:
         self.transcript_parts = []
 
     def add_part(self, part):
-        print(f"Adding part: {part}")  # debug
+        #print(f"Adding part: {part}")  # debug
         self.transcript_parts.append(part)
 
     def get_full_transcript(self):

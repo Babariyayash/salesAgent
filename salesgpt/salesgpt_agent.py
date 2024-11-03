@@ -250,7 +250,7 @@ class SalesGPT(Chain):
 
         self.current_conversation_stage = self.retrieve_conversation_stage(conversation_stage_id)
 
-        print(f"Conversation Stage: {self.current_conversation_stage}")
+        # print(f"Conversation Stage: {self.current_conversation_stage}")
 
     def human_step(self, human_input):
         human_input = 'User: ' + human_input + ' <END_OF_TURN>'
@@ -365,59 +365,3 @@ class SalesGPT(Chain):
 #     '7': "Close: Ask for the sale by proposing a next step. This could be a demo, a trial or a meeting with decision-makers. Ensure to summarize what has been discussed and reiterate the benefits."
 # }
 
-# # Agent characteristics - can be modified
-# config = dict(
-#     salesperson_name="Alex Mercer",
-#     salesperson_role="Sales Representative",
-#     company_name="Eco Home Goods",
-#     company_business="Eco Home Goods offers a variety of eco-friendly household products that are both sustainable and affordable. We believe in providing high-quality products that help our customers live a more environmentally friendly lifestyle.",
-#     company_values="Our mission is to promote sustainable living by offering products that are eco-friendly and affordable. We are committed to reducing our carbon footprint and helping our customers do the same.",
-#     conversation_purpose="find out if they are interested in our new line of eco-friendly kitchen products.",
-#     conversation_history=[],
-#     conversation_type="call",
-#     conversation_stage=conversation_stages.get('1',"Introduction: Start the conversation by introducing yourself and your company. Be polite and respectful while keeping the tone of the conversation professional."),
-#     use_tools=True,
-#     product_catalog="sample_product_catalog.txt"
-# )
-
-
-
-# # Initialize LLM
-# llm = ChatOpenAI(model='gpt-4-turbo', temperature=0.9, openai_api_key=os.getenv("OPENAI_API_KEY"))
-#
-# # Create the SalesGPT agent
-# sales_agent = SalesGPT.from_llm(llm, verbose=False, **config)
-#
-# # Initialize the agent
-# sales_agent.seed_agent()
-#
-# # Determine the conversation stage
-# sales_agent.determine_conversation_stage()
-#
-# # Start the conversation
-# sales_agent.step()
-#
-# # Example human interaction
-# sales_agent.human_step("Hi, I'm curious about your compostable food wraps. Can you tell me more?")
-# sales_agent.determine_conversation_stage()
-# sales_agent.step()
-#
-# # Continue conversation
-# sales_agent.human_step("What sizes do the compostable wraps come in?")
-# sales_agent.determine_conversation_stage()
-# sales_agent.step()
-#
-# # Continue conversation
-# sales_agent.human_step("How much do they cost?")
-# sales_agent.determine_conversation_stage()
-# sales_agent.step()
-#
-# # Continue conversation
-# sales_agent.human_step("Are they easy to clean?")
-# sales_agent.determine_conversation_stage()
-# sales_agent.step()
-#
-# # Continue conversation
-# sales_agent.human_step("Great, I would like to order a set of the medium size wraps.")
-# sales_agent.determine_conversation_stage()
-# sales_agent.step()
